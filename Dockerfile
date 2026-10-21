@@ -7,7 +7,8 @@ COPY package*.json ./
 RUN npm install --omit=dev && npm cache clean --force
 
 COPY src ./src
+COPY db ./db
 
 USER node
 EXPOSE 3000
-CMD ["npm", "start"]
+CMD ["npm", "run", "start:container"]
